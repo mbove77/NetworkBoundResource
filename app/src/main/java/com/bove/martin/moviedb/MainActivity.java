@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setTitle("MoviewDB App");
-        
+
 
         ConnectivityManager conMgr = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -35,13 +36,14 @@ public class MainActivity extends AppCompatActivity {
             if ( conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED
                     || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED ) {
 
-                ab.setSubtitle("online version");
+                ab.setSubtitle(Html.fromHtml("<font color='#03c146'>online version</font>"));
 
             }
             else if ( conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.DISCONNECTED
                     || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.DISCONNECTED) {
 
                 ab.setSubtitle("offline version");
+                ab.setSubtitle(Html.fromHtml("<font color='#ff0000'>offline version</font>"));
             }
         }
     }
