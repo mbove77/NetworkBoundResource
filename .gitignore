@@ -83,3 +83,4 @@ lint/tmp/
 # lint/reports/
 app/src/main/java/com/bove/martin/moviedb/commons/Constantes.java
 app/src/main/java/com/bove/martin/moviedb/commons/Constantes.java
+app/src/main/java/com/bove/martin/moviedb/commons/ApiKey.java

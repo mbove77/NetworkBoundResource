@@ -1,6 +1,6 @@
 package com.bove.martin.moviedb.data.remote;
 
-import com.bove.martin.moviedb.commons.Constantes;
+import com.bove.martin.moviedb.commons.ApiKey;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class RequestInterceptor implements Interceptor {
         HttpUrl originalUrl = originalRequest.url();
 
         HttpUrl newUrl = originalUrl.newBuilder()
-                .addQueryParameter("api_key", Constantes.API_KEY)
+                .addQueryParameter("api_key", ApiKey.API_KEY)
                 .build();
         Request newRequest = originalRequest.newBuilder()
                 .url(newUrl)
